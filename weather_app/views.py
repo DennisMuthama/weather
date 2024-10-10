@@ -4,8 +4,9 @@ import requests
 
 
 def index(request):
+    print("this is your request ",request)
     api_key = settings.API_KEY
-    city = 'Nakuru'
+    city = 'Machakos'
     url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric'
 
     response = requests.get(url)

@@ -25,10 +25,22 @@ v<!DOCTYPE html>
             width: 200px;
             height: 200px;
         }
+        input,button{
+            border: 2px solid darkslategrey;
+            border-radius: 8px;
+            padding: 8px 12px;
+        }
+        button{
+            background: lightgrey;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <form>
+            <input type="text" placeholder="enter location"/>
+            <button type="submit">get</button>
+        </form>
         <h1>Weather in {{ weather.city }}</h1>
         <p><strong>Temperature:</strong> {{ weather.temperature }}°C</p>
         <p><strong>Description:</strong> {{ weather.description }}</p>
