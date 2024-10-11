@@ -4,9 +4,15 @@ import requests
 
 
 def index(request):
-    print("this is your request ",request)
+    print("this is your location ",request.GET.get("location","Nairobi"))
+    newLocation = request.GET.get("location","Nairobi")
+    
+    if newLocation != None:
+        city = newLocation
+    else:
+        city = 'Machakos'
+        
     api_key = settings.API_KEY
-    city = 'Machakos'
     url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric'
 
     response = requests.get(url)
